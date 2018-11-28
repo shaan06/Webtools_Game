@@ -1,0 +1,303 @@
+<style>
+    .split {
+          height: 100%;
+          width: 40%;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          overflow-x: hidden;
+          padding-top: 20px;
+      }
+      
+      .left {
+          left: 0;
+        background-color: bisque;
+      }
+      
+      .right {
+          right: 0;
+      }
+      .center1{
+  padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+}
+      </style>
+<body>
+    <nav class="navbar navbar-inverse"  style="margin-left:150px" >
+        <div class="container-fluid" style="color: black ">
+          <div class="navbar-header">
+            <button  class="btn btn-success" (click)= "logout()">Log Out</button>
+          </div>
+        </div>
+      </nav>
+      <br>
+    
+    <div  *ngIf= "userarea" style="margin-left:150px">
+    <div class="col-sm-6">
+    <div class="container">
+        <h3 style="color: white">SPACE ODDESEY: </h3>
+    
+        <div style="color: white" class="col-sm-10">
+          <hr/>
+              Hello, <b>{{user.username}}</b>, choose an opponent to play with:
+          <br>
+          <br>
+          <div style="color: white" *ngFor="let u of users" style="align-content: flex-end" >
+            Available Users to play with: &nbsp; &nbsp; <b> {{u.username}} </b>
+          </div>
+          <br> <br>
+            <div class="center">
+                <form [formGroup]="UserForm" (ngSubmit)="enteruser()">
+                    <div class="form-group">
+                      <label style="color: white" for="signinInputEmail">Enter your opponent </label>
+                      <input type="text" class="form-control" id="signinInputEmail" formControlName="UserForm" aria-describedby="emailHelp" placeholder="Enter Your Opponent">
+            
+                    </div>
+                    <div class="center">
+                      <a>
+                        <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!UserForm.valid">Click to Proceed: </button>
+                      </a>
+                    </div>
+                  </form>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <div *ngIf = "Playarea" style="margin-left:150px">
+    
+        <div class="col-sm-6">
+            <h5 style="color: white" > <i>
+                The rules of the game are simple, defeat your opponent and you are all set.There are some puzzel you need to solve to defeat yout opponent. Remember there is timeLimit.All The Best!!!
+              </i> </h5>
+              <hr/>
+          <div class="container">
+            <div class="col-sm-10">
+           
+    
+                <div class="center">
+                  <a>
+                    <button type="submit" class="btn btn-success" (click) = "submit()">Proceed To The Game: </button>
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf = "Playarea2" style="margin-left:150px">
+      <div class="col-sm-6">
+        <div style="color: white" class="container">
+    
+          <h3>In Order to Prcoeed in the mission ahead, You are stuck now please solve the puzzel to procceed in the game </h3>
+      
+          <img src="https://i.stack.imgur.com/c8X1c.jpg">
+          <div class="col-sm-10">
+            <hr/>
+            <form [formGroup]="PuzzelForm1" (ngSubmit)="WordSubmit2()">
+              <div class="form-group">
+                <label style="color: white" for="signinInputEmail">Enter The Number of Triangles in the Pic  </label>
+                <input type="number" class="form-control" id="signinInputEmail" formControlName="PuzzelForm1" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+
+              </div>
+              <div class="center">
+                <a>
+                  <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm1.valid">Enter The Word</button>
+                </a>
+              </div>
+            </form>
+          
+        </div>
+        <div >
+            <p style="color: white" [ngStyle]="{'color': color}">
+                Time Left: {{timeLeft}}
+               </p>
+          </div>
+          <div>
+            <p style="color: red">
+            {{alert}}
+            </p>
+          </div>
+          <div style="color: white">
+       Your  SpaceShip Power:   {{updatedpower}}
+        </div>
+        <div style="color: white">
+            Your Opponent SpaceShip Power:   {{power}}
+             </div>
+      </div>
+    </div>
+    </div>
+    <div *ngIf = "Playarea4" style="margin-left:150px">
+      <div class=container-fluid>   
+         <div style="color: white" class="col-sm-6">
+            <h3>In Order to Prcoeed in the mission ahead, You are stuck now please solve the Java Query to procceed in the game </h3>
+            <img src="assets/img/Capture.jpeg" height= "300px" width="600px" >
+            <div class="col-sm-10">
+              <form [formGroup]="PuzzelForm2" (ngSubmit)="WordSubmit4()">
+                <div class="form-group">
+                  <label style="color: white" for="signinInputEmail">Solve the Code:   </label>
+                  <input type="text" class="form-control" id="signinInputEmail" formControlName="PuzzelForm2" aria-describedby="emailHelp" placeholder="Enter Your Answer"> </div>
+                <div class="center">
+                  <a>
+                    <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm2.valid">Enter The Word</button>
+                  </a>
+                </div>
+              </form>
+            </div> 
+          <div style="color: red" >
+            Time Left: {{timeLeft}}
+            </div>
+            <div>
+                <p style="color: red">
+                {{alert}}
+                </p>
+              </div>
+            <div style="color: white">
+           SpaceShip Power:  {{updatedpower}}
+          </div>
+          <div style="color: white">
+          Your Opponent SpaceShip Power:   {{power}}
+          </div>
+        </div>
+      </div>
+      </div>
+      <div *ngIf= "Playarea5">
+          <div class="col-sm-6" >
+              <div class="container">
+                <div class="col-sm-10">
+                  <hr/>
+                  <h3 style="color: white"><i>
+                    Well Played so far, your spaceship power is {{updatedpower}}. So far go good.
+    
+                    Now Dependin on your power you will be considered a strong or weak contender. 
+                  </i>  </h3>
+                    <div class="center">
+                      <a>
+                        <button type="submit" class="btn btn-success btn-lg btn-block" (click) = "submit4()">Proceed To The Game: </button>
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+    
+      </div>
+    <div *ngIf="Playarea6">
+        <div class=container-fluid>   
+            <div style="color: white" class="col-sm-6">
+         
+               <h3>You have hurt your spaceship pretty bad!!! Take a rest, solve this easy peesy 5 standard math problem and boost up your spaceship power. Be careful though, wrong answer hurts your spaceship,but correct answer boost up your power.
+              </h3>
+               <br>
+               <br>
+               <div class="col-sm-10">
+                  <hr/>
+                  <img src="assets/img/Puzzel.PNG" >
+                  <form [formGroup]="PuzzelForm4" (ngSubmit)="WordSubmit6()">
+                    <div class="form-group">
+                      <label for="signinInputEmail" style="color: white">Enter Your Answer(just the digit):   </label>
+                      <input type="number" class="form-control" id="signinInputEmail" formControlName="PuzzelForm4" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+            
+                    </div>
+                    <div class="center">
+                      <a>
+                        <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm4.valid">Enter The Words: </button>
+                      </a>
+                    </div>
+                  </form>
+                </div>
+             <div style="color: white">
+             {{alert1}}
+             </div>
+              <div>
+                <p style="color: red">
+                Time Left: {{timeLeft}}
+               </p>
+                </div>
+                <div>
+                    <p style="color: red">
+                    {{alert}}
+                    </p>
+                  </div>
+                <div style="color: white">
+               SpaceShip Power:  {{updatedpower}}
+              </div>
+              <div style="color: white">
+              Opponent SpaceShip Power:  {{power}}
+                </div>
+            </div>
+          </div>
+     
+     
+     </div>
+     <div *ngIf="Playarea7">
+         <div class=container-fluid>   
+             <div class="col-sm-6">
+          
+                <h3 style="color: white">Wow!!!! You are a good Captian!! Took Good care of your spaceship so far. The Following task is little Difficult. Take Care! Good Luck. Make atleast 5 logical words from the Jumbled words and you are all set. 
+                  Remember Each wrong answer hurts your spaceship terribly!  
+               </h3>
+                <br>
+                <br>
+                <div class="col-sm-10">
+                  <hr/>
+                  <img src="assets/img/myword.jpeg" >
+                  <form [formGroup]="PuzzelForm3" (ngSubmit)="WordSubmit5()">
+                    <div class="form-group">
+                      <label style="color: white" for="signinInputEmail">Enter The Words:   </label>
+                      <input type="text" class="form-control" id="signinInputEmail" formControlName="PuzzelForm3" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+            
+                    </div>
+                    <div class="center">
+                      <a>
+                        <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm3.valid">Enter The Words: </button>
+                      </a>
+                    </div>
+                  </form>
+                </div>
+              <div style="color: white">
+                Your Word Count: {{wordcount}}
+              </div>
+             <div >
+              <p style="color: white">
+             {{alert1}}
+            </p>
+             </div>
+              <div>
+                <p style="color: red" >
+                Time Left: {{timeLeft}}
+               </p>
+                </div>
+                <div>
+                    <p style="color: red" >
+                    {{alert}}
+                    </p>
+                  </div>
+                <div style="color: white">
+               SpaceShip Power:  {{updatedpower}}
+              </div>
+              <div style="color: white">
+               Opponent SpaceShip Power:  {{power}}
+              </div>
+            </div>
+          </div>
+     
+     </div>
+     <div style="color: white" *ngIf = "Playarea8">
+      <div class="center1">
+
+        SpaceShip Power:  {{updatedpower}}
+        Opponent SpaceShip power: {{power}}
+    
+        You Won!!!!! Kudos
+      </div>
+    </div>
+    <div style="color: white" *ngIf = "Playarea9">
+      <div class="center1">
+        SpaceShip Power:  {{updatedpower}}
+        Opponent SpaceShip power: {{power}}
+    
+        You Lost!!!!!!!
+      </div>
+    </div>
+  </body>

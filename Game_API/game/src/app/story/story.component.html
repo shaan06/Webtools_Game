@@ -1,0 +1,357 @@
+<style>
+
+.center1{
+  padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+}
+
+</style>
+
+
+
+<div *ngIf="Spart1" class="body5"  >
+    <!-- class="body5" -->
+  <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/2000px-NASA_logo.svg.png" style="margin-left:700px" width="200" height="100" alt="long logo">
+    <br> <br>
+<div class="center1" style="color: white">
+  <!-- <h3 style="color: white">Offer to go to space</h3>
+  <h4 style="color: white"> -->
+    <i> <u>You are the most deserving person and will be leading a team of scientist to Moon .</u> </i>
+
+    <p>
+      Please provide your initial below.
+    </p>
+  <!-- </h4> -->
+    <br>
+    <input type="text" /> &nbsp;
+    <button type="submit" class="btn btn-success" (click)="Accept()">Accept offer</button> 
+
+    </div>
+</div>
+
+    <div *ngIf="Spart2" class="center1"  class="body4">
+        <br><br> <br> <br>
+        <div class="center1">
+          <h1 style="color: white">Rules for journey</h1>
+      <p style="color: white"> <i>
+        You are the Captain Of the Shuttle as the captain you will have to take some decisions for your
+        Shuttle.<br> These decision will decide how you manage you flight to moon and back. <br>
+        Best of luck for journey. Keep yourself and the team safe!<br>
+        GO WIN!!
+        </i> </p>
+      <button type="submit" class="btn btn-success" (click)="prob1()">Click to proceed</button>
+    </div>
+    </div>
+    <div *ngIf="pacticemode">
+      <p>You will have two puzzle two solve which would be related to 
+        problems you would face during the time of journey <br>
+      There is no time limit to these quiz.</p>
+      <button type="submit" class="btn btn-sucess" (click)="prac1()">Click to Practice</button>
+        </div>
+        <div *ngIf="practiceprob1">
+          <p></p></div>
+    <div *ngIf="Spart3"  class="center1"   class="body7">
+        <br> <br> <br> <br> <br> <br>
+        <div class="center1">
+      <h4 style="color: white">Prepare for launch.<br>
+       <i> You and your team have to prepare for launch solve the puzzle to proceed with the launch.</i>
+      </h4>
+      <br>
+      <button type="submit" class="btn btn-success" (click)="solveprob1()">Go solve the problem</button>
+      </div>
+    </div>
+
+
+    <div *ngIf = "Playarea2" class="body8">
+        <div class="col-sm-6">
+          <br> <br>
+          <div class="container">
+        
+            <h3 style="color: white">In Order to Prcoeed in the mission ahead, You are supposed now to solve the puzzel to order to launch your space shape. </h3>
+        
+            <img src="https://i.stack.imgur.com/c8X1c.jpg">
+            <div class="col-sm-10">
+              <hr/>
+              <form [formGroup]="PuzzelForm1" (ngSubmit)="WordSubmit2()">
+                <div class="form-group">
+                  <label for="signinInputEmail" style="color: white">Enter The Number of Triangles in the Pic (Between 20-30)  </label>
+                  <input type="number" class="form-control" id="signinInputEmail" formControlName="PuzzelForm1" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+        
+                </div>
+                <div class="center">
+                  <a>
+                    <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm1.valid">Submit</button>
+                  </a>
+                </div>
+              </form>
+            
+          </div>
+          <div >
+            <p style="color: red" >
+            Time Left: {{timeLeft}}
+          </p>
+            </div>
+            <div>
+              <p style="color: red">
+              {{alert}}
+              </p>  
+            </div>
+            <div style="color: white">
+          SpaceShip Power:   {{updatedpower}}
+          </div>
+        </div>
+        </div>
+        </div>
+
+
+    
+
+    <div *ngIf="probsolve1" class="body6">
+      <br><br><br><br>
+        <div class="center1">
+      <h5 style="color: black">You have successfully solved the challenge keep a track of you power.
+        <br >You need to maintain it as you can have problems in future.<br><br>
+        <i><b>You have launched successfully
+        out to earth's atmosphere.
+      </b> </i>
+    </h5>
+    <br>
+      <button type="submit" class="btn btn-success" (click)="communication()">Move ahead</button>
+    </div>
+</div>
+      <div *ngIf="Spart4" class="body2">
+        <br> <br><br><br> <br><br>
+        <div class="center1">
+          <h5 style="color: white">The Communication Engineer comes to you as there is a problem.
+            <br>
+            Your shuttle cannot connect to Earth signal and you guys are lost.
+            Help Him to solve a code to connect back to Earth signal.
+          </h5>
+          <br>
+          <button type="subimt" class="btn btn-success" (click)="helpcommunication()">Help him</button> &nbsp; &nbsp; &nbsp;
+          <div class="divider">
+          <button type="subimt" class="btn btn-success" (click)="leftcommunication()">Tell him you are busy</button>
+          </div>
+          </div>
+    </div> 
+
+
+    <div *ngIf = "Playarea4" class="body">
+        <div class=container-fluid>   
+           <div class="col-sm-6">
+        
+              <h3 style="color: white">In Order to Prcoeed in the mission ahead, You are stuck now please solve the Java Query to procceed in the game </h3>
+              <br>
+              <br>
+        
+              <img src="assets/img/Capture.jpeg"  height= "300px" width="600px" >
+              <div class="col-sm-10">
+                <hr/>
+                <form [formGroup]="PuzzelForm2" (ngSubmit)="WordSubmit4()">
+                  <div class="form-group">
+                    <label for="signinInputEmail" style="color: white">Solve the Code: </label>
+                    <input type="text" class="form-control" id="signinInputEmail" formControlName="PuzzelForm2" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+          
+                  </div>
+                  <div class="center">
+                    <a>
+                      <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm2.valid">Submit</button>
+                    </a>
+                  </div>
+                </form>
+              </div>
+            
+              <div >
+                  <p style="color: red" >
+                  Time Left: {{timeLeft}}
+                </p>
+                  </div>
+                  <div>
+                    <p style="color: red">
+                    {{alert}}
+                    </p>  
+                  </div>
+                  <div style="color: white">
+                SpaceShip Power:   {{updatedpower}}
+                </div>
+          </div>
+        </div>
+        </div>
+
+
+
+         
+    <div *ngIf="comm" class="body2">
+      <br><br><br><br>
+        <div class="center1"  >
+          <h5 style="color: white">
+            You are connected back to Earth's signal. You seem to be a good captain. A perfect leader.
+          </h5>
+          <p style="color: white">
+          SpaceShip Power:  {{updatedpower}} 
+        </p>
+        
+        <br> <br>
+        <button type="submit" class="btn btn-success" (click)="moveahead()">Continue Your journey</button>
+        </div>
+        </div>
+<div *ngIf="Spart5" class="body2">
+    <br><br><br><br><br> <br>
+      <div class="center1">
+        <h5  style="color: white">
+            Be careful, your negligence has jeopardise your spaceship health. It is the only time to prove yourself as a leader.
+        </h5>
+      <br>
+      <p style="color: white">
+          SpaceShip Power:  {{updatedpower}} 
+        </p>
+        <button type="submit" class="btn btn-success" (click)="moveahead1()">Continue Your journey</button>
+      </div>
+
+</div>
+<div *ngIf="Spart6" class="body3">
+  <br> <br> <br> <br>
+    <div class="center1">
+      <p style="color: white">
+        On your way to space you seen a broken OLD spaceship.
+        <br>
+        You would like to go and collect Items from there to Increase the power of your space ship.
+      </p>
+      <button type="submit" class="btn btn-success" (click)="abcd()">Continue</button>
+      <p style="color: white">
+        Or else You would continue with the existing power.
+      </p>
+      <button type="submit" class="btn btn-success" (click)="brokenship()">Visit ship</button>
+    </div>
+
+</div>
+<div *ngIf="blank"  class = "body1">
+    <br> <br> <br> <br> <br> <br>
+    <div class="center1">
+  <h4 style="color: white">There is a technical Problem in your ship.<br>
+   <i> You need to solve the following puzzel to resolve the technical problem. </i>
+  </h4>
+  <br>
+  <button type="submit" class="btn btn-success" (click) = "runprob()">solve problem</button>
+  </div>
+  <!-- <button type="submit" class="btn btn-success" (click) = "runprob()">solve problem</button> -->
+</div>
+<div *ngIf="aftship" class="leftship">
+  <br> <br><br><br>
+  <div class="center1">
+    <div style="color: white" class="col-sm-6">
+<p>
+  You have left the ship behind and moving forward.
+<br>
+  Spaceship power : {{updatedpower}}
+</p>
+<button type="submit" class="btn btn-success" (click)="inprob()">Continue</button>
+</div>
+</div>
+</div>
+<div *ngIf="brkship" class = "brokenship">
+    <div class=container-fluid>   
+        <div style="color: white" class="col-sm-6">
+     
+           <h3>  <h3 style="color: red">ALERT! </h3> There seem to be big asteroid in front of you, answer this question to shoot the asteriod
+          </h3>
+
+           <div class="col-sm-10">
+              <img src="assets/img/Puzzel.PNG" height= "300px" width="600px" >
+              <form [formGroup]="PuzzelForm4" (ngSubmit)="WordSubmit6()">
+                <div class="form-group">
+                  <label for="signinInputEmail" style="color: white">Enter Your Answer(just the digit) in cents:   </label>
+                  <input type="number" class="form-control" id="signinInputEmail" formControlName="PuzzelForm4" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+        
+                </div>
+                <div class="center">
+                  <a>
+                    <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm4.valid">Enter your answer: </button>
+                  </a>
+                </div>
+              </form>
+            </div>
+         <div style="color: white">
+         {{alert1}}
+         </div>
+          <div>
+            <p style="color: red">
+            Time Left: {{timeLeft}}
+           </p>
+            </div>
+            <div>
+                <p style="color: red">
+                {{alert}}
+                </p>
+              </div>
+            <div style="color: white">
+           SpaceShip Power:  {{updatedpower}}
+          </div>
+        </div>
+      </div>
+  <!-- <button type="submit" class="btn btn-success" (click)="afterbrokenship()">after ship</button> -->
+</div>
+
+<div *ngIf="Playarea7" class="body">
+  <br>
+    <div class=container-fluid>   
+        <div class="col-sm-6">
+     
+           <h3  style="color: white">Wow!!!! You are a good Captian!! Took Good care of your spaceship so far. The Following task is little Difficult. Take Care! Good Luck. Make atleast 5 logical words from the Jumbled words and you are all set. 
+             Remember Each wrong answer hurts your spaceship terribly!  
+          </h3>
+           <br>
+           <br>
+           <div class="col-sm-10">
+             <hr/>
+             <img src="assets/img/myword.jpeg" >
+             <form [formGroup]="PuzzelForm3" (ngSubmit)="WordSubmit5()">
+               <div class="form-group">
+                 <label for="signinInputEmail"  style="color: white">Enter The Words:   </label>
+                 <input type="text" class="form-control" id="signinInputEmail" formControlName="PuzzelForm3" aria-describedby="emailHelp" placeholder="Enter Your Answer">
+       
+               </div>
+               <div class="center">
+                 <a>
+                   <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!PuzzelForm3.valid">Enter The Words: </button>
+                 </a>
+               </div>
+             </form>
+           </div>
+         <div  style="color: white">
+           Your Word Count: {{wordcount}}
+         </div>
+        <div>
+        {{alert1}}
+        </div>
+         <div  style="color: red">
+           Time Left: {{timeLeft}}
+           </div>
+           <div style="color: white">
+               <p >
+               {{alert}}
+               </p>
+             </div>
+           <div  style="color: white">
+          SpaceShip Power:  {{updatedpower}}
+         </div>
+       </div>
+     </div>
+  
+  </div>
+ 
+<div *ngIf="Playarea8" class="body9">
+    <br> <br> <br> <br> <br> <br>
+    <div class="center1">
+  <h4 style="color: white">You have Reached Moon</h4>
+  <br>
+  <button type="submit" class="btn btn-success" (click) = "newmode()">play another mode</button> &nbsp; &nbsp;
+  <br> <br>
+  <button type="submit" class = "btn btn-success" (click) = "logout()">Logout</button>
+  </div> 
+
+</div>
+
+

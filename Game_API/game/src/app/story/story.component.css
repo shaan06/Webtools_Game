@@ -1,0 +1,94 @@
+.divider{
+    width:50px;
+    height:auto;
+    display:inline-block;
+}
+.body {
+        background-image : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://media.giphy.com/media/nBUW1suj9CZaw/giphy.gif);
+        height : 100vh;
+        background-position: center;
+        background-size :cover;
+    }
+
+.body1 {
+        background-image : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://24b3f6.medialib.edu.glogster.com/0KVxj2y2XwIL4nlcNP1z/media/96/96d319f508028e7874223dc9bd54b8419ff09699/space-shuttle.jpg);
+        height : 100vh;
+        background-position: center;
+        background-size :cover;
+    }
+    .body2 {
+        background-image : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://cinesthesiadotnet.files.wordpress.com/2015/01/interstellar_a.jpg);
+        height : 100vh;
+        background-position: center;
+        background-size :cover;
+    }
+    .brokenship {
+        background-image : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://78.media.tumblr.com/fae55de94d3ebb2424ab873d2219c8ba/tumblr_n9c2dlJfrl1qkyy30o3_500.gif);
+        height : 100vh;
+        background-position: center;
+        background-size :cover;
+    }
+    .body3 {
+        background-image : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://coubsecure-s.akamaihd.net/get/b83/p/coub/simple/cw_timeline_pic/91edbd6c550/53b6d5488dac086775d0d/big_1426980886_image.jpg);
+        height : 100vh;
+        background-position: center;
+        background-size :cover;
+    }
+    .body4 {
+        background-image : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://pixel.nymag.com/imgs/daily/vulture/2014/11/05/interstellar/16_interstellar.w700.h700.jpg);
+        height : 100vh;
+        background-position: center;
+        background-size :cover;
+    }
+    
+.body5{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://media.giphy.com/media/nBUW1suj9CZaw/giphy.gif);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+}
+.body6{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://media.giphy.com/media/RHBHqdYBUmmkw/giphy.gif);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+
+}
+.body7{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://media.giphy.com/media/RHBHqdYBUmmkw/giphy.gif);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+    
+}
+.leftship{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://66.media.tumblr.com/1552e886ceccf090780ebe6f17f20094/tumblr_inline_of1t5lOrXV1sndsvm_500.gif);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+    
+}
+.body7{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://cdni.rt.com/files/news/20/2c/a0/00/000_gyi0056486029.si.jpg);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+    
+}
+.body8{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://media.giphy.com/media/ZdT2zDh3Bvnkk/giphy.gif);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+    
+}
+.body9{
+    background-image : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://media.giphy.com/media/52K19XaD0s4Uw/giphy.gif);
+    height : 100vh;
+    background-position: center;
+    background-size :cover;
+    
+}
+    div.center {
+        text-align: center;
+    }
